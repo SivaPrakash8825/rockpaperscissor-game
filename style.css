@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* :root {
+  --degree1: 0%;
+  --degree: -300%;
+} */
+body {
+  width: 100%;
+  height: 100vh;
+  background: rgb(167, 76, 227);
+}
+
+nav {
+  width: 100%;
+  height: 80px;
+  background: purple;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+nav div:nth-child(1) {
+  font-size: 30px;
+  color: aliceblue;
+}
+nav div:nth-child(2) {
+  font-size: 35px;
+  color: aliceblue;
+}
+nav div:nth-child(3) a {
+  font-size: 20px;
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.container {
+  width: 100%;
+  height: calc(100vh - 80px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.entire-box {
+  width: 500px;
+  height: 600px;
+  background: transparent;
+  position: relative;
+}
+
+.forscore {
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  background: transparent;
+}
+.goals {
+  font-size: 50px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: aliceblue;
+}
+
+.scores {
+  font-size: 40px;
+  color: aliceblue;
+}
+
+.showing-output {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: transparent;
+}
+
+.playerside,
+.oppenentside {
+  width: 170px;
+  height: 250px;
+  background: transparent;
+  overflow: hidden;
+  --degree1: 0%;
+  --degree: 0%;
+  z-index: -1;
+}
+.showing-output h1 {
+  font-size: 80px;
+  font-family: "Kanit", sans-serif;
+  color: aliceblue;
+}
+.playerside div,
+.oppenentside div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border: 2px solid white;
+  justify-content: center;
+  align-items: center;
+
+  background: transparent;
+  font-size: 30px;
+  font-weight: bold;
+  /* transform: translateY(70%); */
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.roll1,
+.roll2 {
+  animation: roll 3s infinite linear;
+}
+
+.playerside div:nth-last-child(1),
+.oppenentside div:nth-last-child(1) {
+  font-size: 50px;
+}
+@keyframes roll {
+  0% {
+    transform: translateY(var(--degree1));
+  }
+  80% {
+    transform: translateY(var(--degree));
+  }
+  100% {
+    transform: translateY(var(--degree1));
+  }
+}
+
+.selecting {
+  width: 100%;
+  height: calc(100% - 470px);
+  background: transparent;
+}
+.selecting,
+.selecting div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.selecting div {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border: 1px solid black;
+  background: transparent;
+  cursor: pointer;
+}
+.selecting div img {
+  width: 100%;
+
+  margin-top: 40px;
+  background-size: cover;
+}
+.playerimg {
+  width: 100%;
+
+  position: absolute;
+
+  display: flex;
+  justify-content: space-around;
+}
+.playerimg img {
+  border-radius: 50%;
+  width: 70px;
+  z-index: 99;
+}
+
+@media screen and (max-width: 500px) {
+  .entire-box {
+    width: 350px;
+  }
+  .playerside {
+  }
+  .playerimg img {
+    width: 60px;
+  }
+  .showing-output h1 {
+    font-size: 40px;
+    font-family: "Kanit", sans-serif;
+    color: aliceblue;
+  }
+  nav h2 {
+    font-size: 35px;
+  }
+}
